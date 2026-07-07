@@ -284,6 +284,15 @@ Entries follow the format `DL-{N}`. Each entry must include a citation (quote or
 - Method: Market scan (July 7, 2026) — direct RU bank case study found (Sovcombank), plus ChatPRD/industry adoption data
 - Method: Synthetic CustDev (persona simulation, July 7, 2026) — two passes: general workflow discovery, then objection-focused deep dive on this specific hypothesis
 - Method: Hypothesis-check + ICE scoring (July 7, 2026)
+- Method: Live interviews — **guides prepared, interviews not yet conducted** (July 7, 2026). Split by specialization since "digital-channel PM" covers three distinct teams:
+
+| Специализация | Гайд | Статус |
+|---|---|---|
+| Мобильное приложение | `Interview_ProductManagers_06_26_Mobile.md` | Не проведено — ждём тёплого интро через тимлида DL-1 |
+| Интернет-банк (веб) | `Interview_ProductManagers_06_26_Web.md` | Не проведено — ждём тёплого интро через тимлида DL-1 |
+| Голосовые/чат-помощники | `Interview_ProductManagers_06_26_Voice.md` | Не проведено — доступ короче (мост через команду DL-0/DL-3/DL-4), но интро тоже пока не запрошено |
+
+> Ни одно из трёх интервью пока не даёт реальных цитат/цифр — секция «Evidence so far» ниже содержит только рыночные и синтетические данные (уже помечены как таковые). Когда интервью пройдут, для каждой специализации нужно добавить отдельный блок «Что узнали» + «Цитаты» по шаблону `skill-decision-log.md`, а не переписывать общий вывод по всем трём сразу — специализации могут дать разный результат (см. кросс-ссылки в самих гайдах).
 
 **What we learned so far:**
 1. Pain is real in the synthetic persona but narrower than the market case suggests: PRD writing itself is "not painful, just slow" — the actual pain is PRD↔implementation drift (decisions made in chat/calls never make it back into the document) and executive-summary writing for committee reports
@@ -302,8 +311,11 @@ Entries follow the format `DL-{N}`. Each entry must include a citation (quote or
 **ICE:** I=7, C=7, E=6 → **294** (I·C·A synthesis score in the source doc: I=7, C=7, A=4 → 196; A reflects no direct access yet, bridged only via DL-1 analysts)
 
 **Validation still needed:**
-- [ ] Warm intro via DL-1 analytics team lead to a digital-channel PM
-- [ ] 3–5 live interviews: confirm PRD↔implementation drift as a regular (not occasional) problem, in real numbers
+- [ ] Warm intro via DL-1 analytics team lead to a digital-channel PM (mobile + web) — no separate bridge exists for these two yet
+- [ ] Warm intro via DL-0/DL-3/DL-4 scriptwriter team lead to the voice/chat-assistant PM — shorter path, not yet requested
+- [ ] Run `Interview_ProductManagers_06_26_Mobile.md` (3–5 respondents) — confirm PRD↔implementation drift as regular, not occasional, in real numbers
+- [ ] Run `Interview_ProductManagers_06_26_Web.md` (3–5 respondents) — same, currently only transferred by analogy from the mobile synthetic CustDev, not independently confirmed
+- [ ] Run `Interview_ProductManagers_06_26_Voice.md` (3–5 respondents) — same, plus confirm PM notes don't routinely contain unmasked customer dialogue fragments
 - [ ] Technical PoC: 5–10 real (anonymized) PRDs + call notes, run on self-hosted LLM, measure share of correctly traced sections vs. invented requirements
 - [ ] Confirm self-hosted-only constraint is acceptable to infosec before any external tool is even considered
 
@@ -313,12 +325,13 @@ Entries follow the format `DL-{N}`. Each entry must include a citation (quote or
 - **Red:** PMs write PRDs in under 1h with no drift problem, OR self-hosted LLM invents requirements at a rate the persona's zero-tolerance bar rejects → stop
 
 **What to do next:**
-- Next step: Request warm intro from DL-1 team lead to a digital-channel PM
-- Deadline: 3–4 weeks (wider than typical cycle — new org, no existing warm contact)
+- Next step: Request warm intro from DL-1 team lead (mobile + web PM) and from DL-0/DL-3/DL-4 team lead (voice PM) — voice has the shorter path, try it first
+- Deadline: 3–4 weeks (wider than typical cycle — new org, no existing warm contact for two of the three specializations)
 - Responsible: Product owner
 
 **Related:**
 - Full hypothesis run: `Hypotheses_AllRoles_23_26.md`, Роль 4 (7 candidates generated, top-3 checked, top-1 deep synthetic CustDev)
+- Interview guides (prepared, not yet run): `Interview_ProductManagers_06_26_Mobile.md`, `Interview_ProductManagers_06_26_Web.md`, `Interview_ProductManagers_06_26_Voice.md`
 - Cautionary parallel: DL-2 (killed) — do not repeat "full-cycle assistant" scope creep
 - Running in parallel with: DL-6 (same digital-product org, adjacent role — Product Designer)
 
