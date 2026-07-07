@@ -96,7 +96,7 @@ Product builder doing AI transformation inside banks. I find roles with measurab
 
 **→ Next actions:**
 - **Done:** Market signal scan (June 2026)
-- **Done:** Hypothesis generation + check + synthetic CustDev for Product Managers (DL-5) and Product Designers (DL-6) — July 7, 2026. See `Hypotheses_ProductManagers_06_26.md` and `Hypotheses_ProductDesigners_06_26.md`.
+- **Done:** Hypothesis generation + check + synthetic CustDev for Product Managers (DL-5) and Product Designers (DL-6) — July 7, 2026. Consolidated into `Hypotheses_AllRoles_23_26.md` (Роль 4 and Роль 5 sections) — the separate per-role files were merged in and removed.
 - **Next:** Pick data analysts (DL-1 extension) or scriptwriters → run `skill-hypothesis-check.md` → open DL-3
   Suggested: Data analysts — existing relationship, SQL solved, now find the next bottleneck (dashboards / Excel / commentary)
 - **Also queued:** DL-5 (PM — PRD generation from notes) and DL-6 (Designer — usability-test synthesis) need a warm intro into the digital-product org before live interviews can start; DL-6 additionally needs an infosec sign-off on processing usability-test recordings before its PoC can run.
@@ -129,9 +129,7 @@ One full cycle is ~3 hours. The loop is closed when the DL entry lives in `CLAUD
 | `CLAUDE_template.md` | Product context template — fill this in per product and rename to `CLAUDE.md` |
 | `skill-hypothesis-generating.md` | Generates hypothesis candidates from 3 sources (market, CustDev, product data) → prioritized list ready for hypothesis-check |
 | `Hypotheses_WW_YY.md` | Cross-role hypothesis runs — one file per run (e.g. `Hypotheses_23_26.md`, `Hypotheses_23_26_2.md`). Latest: `Hypotheses_23_26_2.md` |
-| `Hypotheses_AllRoles_23_26.md` | **Canonical** combined & skill-corrected hypotheses for all 3 roles (30 total), in Russian. Replaced the three per-role files (`Hypotheses_DataAnalysts/ScenarioWriters/QA_23_26.md`), now deleted. |
-| `Hypotheses_ProductManagers_06_26.md` | Full generate → check → synthetic CustDev run for the Product Manager role (digital channels). Source for DL-5. |
-| `Hypotheses_ProductDesigners_06_26.md` | Full generate → check → synthetic CustDev run for the Product Designer role (digital channels). Source for DL-6. |
+| `Hypotheses_AllRoles_23_26.md` | **Canonical, single source of truth** for all hypotheses across all 5 roles (44 total), in Russian — scriptwriters, analysts, QA, plus Product Managers (Роль 4, source for DL-5) and Product Designers (Роль 5, source for DL-6). All per-role files have been merged in and deleted; do not recreate separate per-role hypothesis files — add new roles as sections in this one file. |
 | `skill-hypothesis-check.md` | Structures a raw idea into a testable hypothesis + ICE (1–10) + go/pivot/stop criteria |
 | `skill-synthetic-custdev.md` | Turns Claude into a specific ICP persona for a practice interview session |
 | `skill-market-scan.md` | Produces a structured market report: TAM, players, trends, gaps — all with sources |
@@ -320,7 +318,7 @@ Entries follow the format `DL-{N}`. Each entry must include a citation (quote or
 - Responsible: Product owner
 
 **Related:**
-- Full hypothesis run: `Hypotheses_ProductManagers_06_26.md` (7 candidates generated, top-3 checked, top-1 deep synthetic CustDev)
+- Full hypothesis run: `Hypotheses_AllRoles_23_26.md`, Роль 4 (7 candidates generated, top-3 checked, top-1 deep synthetic CustDev)
 - Cautionary parallel: DL-2 (killed) — do not repeat "full-cycle assistant" scope creep
 - Running in parallel with: DL-6 (same digital-product org, adjacent role — Product Designer)
 
@@ -372,5 +370,5 @@ Entries follow the format `DL-{N}`. Each entry must include a citation (quote or
 - Responsible: Product owner
 
 **Related:**
-- Full hypothesis run: `Hypotheses_ProductDesigners_06_26.md` (7 candidates generated, top-3 checked, top-1 deep synthetic CustDev)
+- Full hypothesis run: `Hypotheses_AllRoles_23_26.md`, Роль 5 (7 candidates generated, top-3 checked, top-1 deep synthetic CustDev)
 - Running in parallel with: DL-5 (same digital-product org, adjacent role — Product Manager, serves as access bridge)
