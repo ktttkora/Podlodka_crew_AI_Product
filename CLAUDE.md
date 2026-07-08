@@ -78,10 +78,12 @@ Product builder doing AI transformation inside banks. I find roles with measurab
 | Data analysts (same team as DL-1) | **Have access** | DL-1 already shipped here | SQL pain solved; remaining pain = dashboards, Excel reports, analysis commentary | **#1** |
 | Chatbot scenario writers | **Have access** | None external — DL-2b internal signal | 20% sprint waste on script fixes confirmed; utterance writing ~5-10% sprint additional | **#2** |
 | QA engineers | No access yet | Strong — named pain "script fatigue" | State Street: 67% cut; DBS: 20 days → 1 | **#3** |
+| Product Managers (digital channels — mobile app, internet banking) | No access yet — bridge via DL-1 analysts | Strong — direct RU bank case (Sovcombank: −50% PM routine); ChatPRD −60% PRD time | PRD↔implementation drift confirmed via synthetic CustDev; real interviews pending | **#4** |
+| Product Designers (digital channels) | No access yet — bridge via PM relationship | Strong — 72% designers use gen AI (Figma State of Designer 2026); 78% UX teams use AI in research | Usability-test synthesis ("2 days" per test) confirmed via synthetic CustDev; blocked on PII review for test recordings | **#5** |
 
 > **Note:** "Chatbot scriptwriters" and "scenario writers" are the same role — one person writes both JS scripts and NLU training data (intents, utterances, RegExp). DL-3 and DL-4 both target this role.
 
-*Ranking logic: access is the binding constraint at <1 year tenure. QA has the strongest external evidence but no relationship — needs trust-building first. BA and scriptwriters can be interviewed now.*
+*Ranking logic: access is the binding constraint at <1 year tenure. QA has the strongest external evidence but no relationship — needs trust-building first. BA and scriptwriters can be interviewed now. PM and Designer sit in a separate digital-product org with no direct relationship yet — ranked below QA because, unlike QA's named external pain, their top hypotheses are only synthetic-CustDev-validated so far, and Designer additionally carries an unresolved PII question (usability-test recordings) that QA/PM don't.*
 
 **Note on Scrum Masters:** Removed — they don't exist as a distinct role in this bank. Team leads double as SMs. The sprint reporting pain (30–120 min/sprint) is real but falls on team leads, not a separate role. Could surface as a secondary pain during team lead interviews.
 
@@ -94,8 +96,10 @@ Product builder doing AI transformation inside banks. I find roles with measurab
 
 **→ Next actions:**
 - **Done:** Market signal scan (June 2026)
+- **Done:** Hypothesis generation + check + synthetic CustDev for Product Managers (DL-5) and Product Designers (DL-6) — July 7, 2026. Consolidated into `Hypotheses_AllRoles_23_26.md` (Роль 4 and Роль 5 sections) — the separate per-role files were merged in and removed.
 - **Next:** Pick data analysts (DL-1 extension) or scriptwriters → run `skill-hypothesis-check.md` → open DL-3
   Suggested: Data analysts — existing relationship, SQL solved, now find the next bottleneck (dashboards / Excel / commentary)
+- **Also queued:** DL-5 (PM — PRD generation from notes) and DL-6 (Designer — usability-test synthesis) need a warm intro into the digital-product org before live interviews can start; DL-6 additionally needs an infosec sign-off on processing usability-test recordings before its PoC can run.
 
 **Out of scope:** DevOps/SRE/infrastructure roles; Security/Antifraud — separate department, no access.
 
@@ -125,7 +129,7 @@ One full cycle is ~3 hours. The loop is closed when the DL entry lives in `CLAUD
 | `CLAUDE_template.md` | Product context template — fill this in per product and rename to `CLAUDE.md` |
 | `skill-hypothesis-generating.md` | Generates hypothesis candidates from 3 sources (market, CustDev, product data) → prioritized list ready for hypothesis-check |
 | `Hypotheses_WW_YY.md` | Cross-role hypothesis runs — one file per run (e.g. `Hypotheses_23_26.md`, `Hypotheses_23_26_2.md`). Latest: `Hypotheses_23_26_2.md` |
-| `Hypotheses_AllRoles_23_26.md` | **Canonical** combined & skill-corrected hypotheses for all 3 roles (30 total), in Russian. Replaced the three per-role files (`Hypotheses_DataAnalysts/ScenarioWriters/QA_23_26.md`), now deleted. |
+| `Hypotheses_AllRoles_23_26.md` | **Canonical, single source of truth** for all hypotheses across all 5 roles (44 total), in Russian — scriptwriters, analysts, QA, plus Product Managers (Роль 4, source for DL-5) and Product Designers (Роль 5, source for DL-6). All per-role files have been merged in and deleted; do not recreate separate per-role hypothesis files — add new roles as sections in this one file. |
 | `skill-hypothesis-check.md` | Structures a raw idea into a testable hypothesis + ICE (1–10) + go/pivot/stop criteria |
 | `skill-synthetic-custdev.md` | Turns Claude into a specific ICP persona for a practice interview session |
 | `skill-market-scan.md` | Produces a structured market report: TAM, players, trends, gaps — all with sources |
@@ -266,3 +270,164 @@ Entries follow the format `DL-{N}`. Each entry must include a citation (quote or
 - Previous: DL-0 (shipped — RegExp generation for same team)
 - Born from: DL-0 adjacent pain, Hypotheses_23_26_2.md run 2 top candidate
 - Running in parallel with: DL-3 (same scriptwriter team, different pain)
+
+---
+
+### DL-5 — AI PRD generation for bank Product Managers (In Progress — opened July 7, 2026)
+
+**Hypothesis:**
+> Product Managers of digital channels (mobile app, internet banking) will cut PRD drafting friction and PRD↔implementation drift if AI generates a traceable PRD draft from call notes and idea descriptions, provided every line can be traced back to its source and no requirement is invented.
+
+**Origin:** New role, opened via `skill-hypothesis-generating.md` full 3-source run (market + synthetic CustDev + vision). First hypothesis cycle for this role — no prior DL history.
+
+**What we tested so far:**
+- Method: Market scan (July 7, 2026) — direct RU bank case study found (Sovcombank), plus ChatPRD/industry adoption data
+- Method: Synthetic CustDev (persona simulation, July 7, 2026) — two passes: general workflow discovery, then objection-focused deep dive on this specific hypothesis
+- Method: Hypothesis-check + ICE scoring (July 7, 2026)
+- Method: Live interviews — **guides prepared, interviews not yet conducted** (July 7, 2026). Split by specialization since "digital-channel PM" covers three distinct teams:
+
+| Специализация | Гайд | Статус |
+|---|---|---|
+| Мобильное приложение | `Interview_ProductManagers_06_26_Mobile.md` | Не проведено — ждём тёплого интро через тимлида DL-1 |
+| Интернет-банк (веб) | `Interview_ProductManagers_06_26_Web.md` | Не проведено — ждём тёплого интро через тимлида DL-1 |
+| Голосовые/чат-помощники | `Interview_ProductManagers_06_26_Voice.md` | Не проведено — доступ короче (мост через команду DL-0/DL-3/DL-4), но интро тоже пока не запрошено |
+
+> Ни одно из трёх интервью пока не даёт реальных цитат/цифр — секция «Evidence so far» ниже содержит только рыночные и синтетические данные (уже помечены как таковые). Когда интервью пройдут, для каждой специализации нужно добавить отдельный блок «Что узнали» + «Цитаты» по шаблону `skill-decision-log.md`, а не переписывать общий вывод по всем трём сразу — специализации могут дать разный результат (см. кросс-ссылки в самих гайдах).
+
+**What we learned so far:**
+1. Pain is real in the synthetic persona but narrower than the market case suggests: PRD writing itself is "not painful, just slow" — the actual pain is PRD↔implementation drift (decisions made in chat/calls never make it back into the document) and executive-summary writing for committee reports
+2. Direct RU competitor evidence: Sovcombank shipped a full-cycle PM AI assistant and reported ~50% routine-time reduction — strongest external signal of any new-role hypothesis so far, but scope is dangerously broad (see risk below)
+3. Key risk — repeats DL-2 failure mode if unscoped: a "full product-cycle assistant" (documentation + prioritization + analytics + GTM, as in the Sovcombank case) is too broad and hard to measure; must be cut narrow like DL-3/DL-4, not copied wholesale
+4. Critical objection from persona: accountability — "so the AI generated it" is not an acceptable answer to a compliance/architecture question; every PRD line must be traceable to its source note
+5. Critical objection: a self-hosted-only constraint is non-negotiable here — external SaaS tools (ChatPRD and similar from the market signal) would need months of infosec approval and are out of scope from day one
+6. Critical objection: tolerance for hallucinated requirements is close to zero — one bad requirement reaching development erases all time savings and triggers full manual re-review going forward
+
+**Evidence so far:**
+> "ИИ-ассистент... сократил рутину продуктовой команды на 50%" — Sovcombank Technologies, published case study (RU bank, direct competitor context)
+> "PM сократил время написания PRD на 60% используя ChatPRD" — ChatPRD 2026 guide (external, cloud-tool context, not yet verified on our self-hosted stack)
+> "Через месяц у PRD и у того, что реально запилили, расхождение — потому что решения принимались в переписке, а не в документе" — synthetic CustDev persona
+> "Если хоть раз в разработку уйдёт требование, которого не было — я после этого буду перечитывать каждую строчку так же внимательно, как если бы писала сама" — synthetic CustDev persona (objection-focused session)
+
+**ICE:** I=7, C=7, E=6 → **294** (I·C·A synthesis score in the source doc: I=7, C=7, A=4 → 196; A reflects no direct access yet, bridged only via DL-1 analysts)
+
+**Validation still needed:**
+- [ ] Warm intro via DL-1 analytics team lead to a digital-channel PM (mobile + web) — no separate bridge exists for these two yet
+- [ ] Warm intro via DL-0/DL-3/DL-4 scriptwriter team lead to the voice/chat-assistant PM — shorter path, not yet requested
+- [ ] Run `Interview_ProductManagers_06_26_Mobile.md` (3–5 respondents) — confirm PRD↔implementation drift as regular, not occasional, in real numbers
+- [ ] Run `Interview_ProductManagers_06_26_Web.md` (3–5 respondents) — same, currently only transferred by analogy from the mobile synthetic CustDev, not independently confirmed
+- [ ] Run `Interview_ProductManagers_06_26_Voice.md` (3–5 respondents) — same, plus confirm PM notes don't routinely contain unmasked customer dialogue fragments
+- [ ] Technical PoC: 5–10 real (anonymized) PRDs + call notes, run on self-hosted LLM, measure share of correctly traced sections vs. invented requirements
+- [ ] Confirm self-hosted-only constraint is acceptable to infosec before any external tool is even considered
+
+**Criteria:**
+- **Green:** 3+ of 5 PMs confirm PRD↔implementation drift as a regular problem AND PoC traceable-coverage ≥85–90% with zero invented requirements → build (draft-with-traceability + confidence markers, not an autonomous full-cycle assistant)
+- **Yellow:** Pain confirmed but PoC accuracy 70–85% or hallucination rate meaningful → pivot: every generated line ships with an explicit low-confidence flag; PM reviews flagged lines only
+- **Red:** PMs write PRDs in under 1h with no drift problem, OR self-hosted LLM invents requirements at a rate the persona's zero-tolerance bar rejects → stop
+
+**What to do next:**
+- Next step: Request warm intro from DL-1 team lead (mobile + web PM) and from DL-0/DL-3/DL-4 team lead (voice PM) — voice has the shorter path, try it first
+- Deadline: 3–4 weeks (wider than typical cycle — new org, no existing warm contact for two of the three specializations)
+- Responsible: Product owner
+
+**Related:**
+- Full hypothesis run: `Hypotheses_AllRoles_23_26.md`, Роль 4 (7 candidates generated, top-3 checked, top-1 deep synthetic CustDev)
+- Interview guides (prepared, not yet run): `Interview_ProductManagers_06_26_Mobile.md`, `Interview_ProductManagers_06_26_Web.md`, `Interview_ProductManagers_06_26_Voice.md`
+- Cautionary parallel: DL-2 (killed) — do not repeat "full-cycle assistant" scope creep
+- Running in parallel with: DL-6 (same digital-product org, adjacent role — Product Designer)
+
+---
+
+### DL-6 — AI usability-test synthesis for bank Product Designers (In Progress — opened July 7, 2026)
+
+**Hypothesis:**
+> Product Designers of digital channels will cut usability-test analysis time from ~2 days to ≤0.5 day per test if AI extracts themes with verbatim quotes and exact timestamps from test recordings, provided quotes are checkably accurate (not paraphrased) and sensitive data (card numbers, amounts spoken during the test) is masked before the transcript reaches any LLM.
+
+**Origin:** New role, opened via `skill-hypothesis-generating.md` full 3-source run (market + synthetic CustDev + vision). First hypothesis cycle for this role — no prior DL history.
+
+**What we tested so far:**
+- Method: Market scan (July 7, 2026) — strong external adoption data (Figma State of the Designer 2026, AI UX research tooling category)
+- Method: Synthetic CustDev (persona simulation, July 7, 2026) — two passes: general workflow discovery, then objection-focused deep dive on this specific hypothesis
+- Method: Hypothesis-check + ICE scoring (July 7, 2026)
+
+**What we learned so far:**
+1. Pain confirmed as the single most emotionally intense pain in the persona session: ~2 days of manual work per usability test (watch 5–6 recordings + synthesize into a citable document)
+2. Market context is strong but transfers via cloud SaaS (Dovetail, Perspective AI, Miro Assist) — this role's central risk is data perimeter, not model quality, unlike every other role tested so far (DL-0/DL-1/DL-3/DL-4 inputs are text-only; this role's input is audio/video of real bank customers)
+3. Critical objection: usability-test scripts routinely include real payment scenarios ("show me how you normally pay") — participants say amounts and show card fragments on screen. This is a structural PII risk built into the test format itself, not a hypothetical edge case
+4. Critical objection: quotes must be verbatim with exact timestamps because designers use them as evidence in front of PM/dev — paraphrasing or timestamp drift makes the output useless even if the theme is correct
+5. Critical objection: audio-only transcripts lose non-verbal signal (pauses, hesitation, repeated mis-taps) that audio-with-video would capture, but video sharply raises data sensitivity (customer faces) — a real tradeoff with no clean answer
+6. Same "one failure, zero savings" trust threshold as DL-5: a single inaccurate synthesis sends the designer back to full manual review, now with an added verification step
+
+**Evidence so far:**
+> "72% дизайнеров используют генеративный ИИ в работе, 98% нарастили использование год к году" — Figma State of the Designer 2026
+> "78% UX/продуктовых команд используют ИИ в исследовательских процессах (рост с 34% в 2024)" — Maze State of UX Research 2026, via Storyflow
+> "Пять записей по 40 минут — это почти целый день только на просмотр, плюс ещё день, чтобы свести в внятные выводы" — synthetic CustDev persona
+> "Записи юзабилити-тестов — это голоса и лица реальных пользователей банка... сами респонденты иногда называют номера карт или суммы вслух" — synthetic CustDev persona (objection-focused session)
+
+**ICE:** I=7, C=6, E=5 → **210** (I·C·A synthesis score in source doc: I=7, C=7, A=3 → 147; A reflects no direct access — bridge only via the PM relationship being built under DL-5)
+
+**Validation still needed:**
+- [ ] Infosec check: is processing usability-test audio (even with number-masking) permissible on the self-hosted contour? This is a harder blocker than in any prior DL and must clear before a PoC is worth running
+- [ ] Warm intro via a digital-channel PM (once DL-5 relationship exists) to a lead Product Designer
+- [ ] 3–5 live interviews: confirm ~2-day analysis time and the verbatim-quote trust bar in real numbers
+- [ ] Technical PoC: 3–5 anonymized/navigation-only test recordings (no real payment scenarios) → transcript + number-masking → LLM synthesis → compare extracted quotes/timestamps against the designer's own manual analysis of the same recordings
+
+**Criteria:**
+- **Green:** 3+ of 5 designers confirm >1 day per test AND PoC quote accuracy ≥90% on anonymized data with infosec clearance obtained → build (audio-only + number-masking scope, not video)
+- **Yellow:** Pain confirmed but masking destroys too much context (accuracy 70–90%), OR infosec allows only a restricted subset of test types → pivot: audio-only, human does a final quote-verification pass before anything is shared as "evidence"
+- **Red:** Infosec blocks processing usability-test recordings even when anonymized, OR accuracy <70% → stop
+
+**What to do next:**
+- Next step: Raise the infosec question about usability-test recording processing before committing further design-partner time
+- Parallel: Pursue the DL-5 PM relationship as the access bridge into the design team
+- Deadline: 3–4 weeks (wider than typical cycle — new org, no warm contact, added infosec gate)
+- Responsible: Product owner
+
+**Related:**
+- Full hypothesis run: `Hypotheses_AllRoles_23_26.md`, Роль 5 (7 candidates generated, top-3 checked, top-1 deep synthetic CustDev)
+- Running in parallel with: DL-5 (same digital-product org, adjacent role — Product Manager, serves as access bridge)
+
+---
+
+## DL-7 — Синтетический CustDev, третья волна для сценаристов чат-ботов (7 июля 2026)
+
+**Гипотеза:**
+> Три гипотезы роли «Сценарист», ранее подтверждённые только Рынком/Визионом (без CustDev), проверены синтетической сессией: H-SW-4 (детекция конфликтов интентов), H-SW-3 (тестовые диалоги), H-SW-6 (auto-changelog). Все три уточнены и подтверждены; H-SW-7, H-SW-9, H-SW-10 — ослаблены или переадресованы.
+
+**Что проверяли:**
+- Метод: синтетический CustDev (`skill-synthetic-custdev.md`), персона — сценарист чат-ботов, 3 года в банке, ведёт направление «платежи и переводы» (~140 интентов)
+- Объём: 1 синтетическая сессия, охватила 6 гипотез (H-SW-3, H-SW-4, H-SW-6, H-SW-7, H-SW-9, H-SW-10)
+- Период проверки: 0 дней (синтетика проведена сразу); живая проверка — 14 дней с момента интервью (доступ уже тёплый, интро не требуется)
+
+**Что узнали (5 пунктов):**
+1. Детекция конфликтов интентов (H-SW-4) — реальная боль на двух уровнях: мелкая (20-30 мин ручной проверки при каждом новом интенте, 2-3 раза за спринт) и редкая, но дорогая (реальный прод-инцидент — 2 дня разбора, найден по жалобе клиента через поддержку, не внутренним контролем)
+2. Тестирование перед релизом (H-SW-3) подтверждено как неформальное и only-happy-path (15-20 мин/интент) — но всплыло новое критичное требование: инструмент не должен создавать «ложное чувство полного покрытия», иначе сценарист теряет подотчётность за пропущенные баги
+3. Документирование изменений (H-SW-6) — конкретная, количественно подтверждённая боль (10-15 мин/изменение, ~20% случаев забывается) — но чистый git-diff summary недостаточен, комплаенс спрашивает «почему», не только «что»
+4. Две гипотезы ослаблены живым сигналом: H-SW-7 (рационализация интентов) — «не горит», квартальная ревизия пропущена полгода без последствий; H-SW-9 (флаги рефакторинга) — персона прямо говорит, что будет игнорировать пассивные подсказки
+5. H-SW-10 (release notes для бизнеса) адресует не ту роль — это боль тимлида/продакта, не сценариста; если проверять дальше, нужен другой респондент
+
+**Цитаты / данные (доказательная база):**
+> «Один раз бот реально путал два похожих интента — два дня разбирались, почему клиенты попадали не туда. Причём нашли это не мы, а поддержка по жалобе» — синтетический CustDev, H-SW-4
+> «Не хочу, чтобы отчёт "всё ок" создавал ложное чувство полного покрытия. Если баг пропустится в проде, не хочу говорить "инструмент сказал, что всё нормально"» — синтетический CustDev, H-SW-3
+> «Комплаенс иногда спрашивает "зачем", а не только "что изменилось". Сухой diff это не покажет» — синтетический CustDev, H-SW-6
+> «Ревизию библиотеки должны делать раз в квартал, по факту не делали полгода — не горит» — синтетический CustDev, H-SW-7 (ослабляющий сигнал)
+> «Release notes для бизнеса — вообще не моя боль, этим занимается тимлид/продакт» — синтетический CustDev, H-SW-10 (переадресующий сигнал)
+
+**Решение:**
+- [ ] Зелёный — продолжаем
+- [ ] Жёлтый — pivot
+- [ ] Красный — стоп
+- [x] **Не готово к финальному решению** — синтетическая сессия даёт основание для живых интервью (все три гипотезы теперь ★, I·C·A пересчитан: H-SW-4 288→336, H-SW-3 240→288, H-SW-6 160→240), но per `skill-decision-log.md` финальное green/yellow/red возможно только после живых интервью с реальными респондентами
+
+**Что делаем дальше:**
+- Следующий шаг: провести живое интервью по гайду `Interview_ScenarioWriters_06_26_Testing.md` (покрывает H-SW-3, H-SW-5, H-SW-10) — можно объединить с уточняющими вопросами по H-SW-4 и H-SW-6 в ту же встречу, команда та же, что и DL-3/DL-4
+- Ответственный: Product owner
+- Дедлайн: 14 дней с момента встречи (доступ тёплый, интро не требуется)
+
+**Связанные:**
+- Предыдущее решение: DL-3 (H-SW-2, диагностика скриптов), DL-4 (H-SW-1, генерация utterances) — та же роль, та же команда
+- Полный список гипотез и обновлённые I·C·A: `Hypotheses_AllRoles_23_26.md`, Роль 1, раздел «Синтетический CustDev — сессия для сценаристов, третья волна»
+- Гипотеза, которая родилась отсюда: нет новых ID — уточнены существующие H-SW-3/4/6; H-SW-7/9/10 деприоритизированы, не подняты в очередь
+
+**Авторство:**
+- Кто принял решение: Product owner (синтетическая сессия, финальное решение отложено до живых интервью)
+- Кто участвовал в обсуждении: синтетическая персона (симуляция сценариста, `skill-synthetic-custdev.md`)
