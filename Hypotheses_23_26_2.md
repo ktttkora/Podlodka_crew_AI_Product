@@ -28,6 +28,7 @@
 | 6 | AI reviews script changes before push to production | Scriptwriters (DL-3 team) | Vision ★ Market |
 | 7 | AI drafts anomaly investigation brief when data alert fires | Data analysts (DL-1 team) | Vision |
 | 8 | AI generates unit tests from function specification | Backend developers | Market |
+| 9 | AI writes test environment setup documentation | QA | Market |
 | 10 | AI extracts meeting minutes and action items from notes | Any IT team | Market |
 
 ---
@@ -44,6 +45,7 @@
 | 3 | Test dialogue generation | 6 | 5 | 8 | **240** | Vision |
 | 4 | SQL explanation for handoffs | 5 | 6 | 9 | **270** | Vision |
 | 8 | Unit test generation (backend devs) | 7 | 5 | 2 | **70** | Market |
+| 9 | Test environment docs (QA) | 4 | 5 | 2 | **40** | Market |
 | 10 | Meeting minutes extraction | 5 | 5 | 5 | **125** | Market |
 
 ---
@@ -211,6 +213,16 @@ A: "Yes. It takes time. A good test suite for a new function can take as long as
 
 ---
 
+### #9 — Test environment setup documentation (QA)
+**Persona:** QA engineer (hypothetical — no access)
+
+**Q: Do you document test environment setup?**
+A: "Badly. It's always out of date. Onboarding a new QA person takes days because of this."
+
+**Verdict: ❌ NO ACCESS + WRONG PROBLEM. Documentation debt is real but not a sprint bottleneck. Drop.**
+
+---
+
 ### #10 — Meeting minutes and action item extraction
 **Persona:** Any IT team member after a meeting
 
@@ -239,6 +251,7 @@ A: "Sometimes. But that's a process problem more than a tool problem."
 | #6 Pre-push code review | 336 | ❌ Nice-to-have, bundle with DL-3 | Drop / DL-3 phase 2 |
 | #4 SQL explanation | 270 | ❌ Chronic, not acute | Drop / DL-1 feature |
 | #8 Unit test gen | 70 | ❌ Out of scope + no access | Drop |
+| #9 Test env docs | 40 | ❌ No access + wrong problem | Drop |
 | #10 Meeting minutes | 125 | ❌ Accepted pain, generic tools exist | Drop |
 
 ---

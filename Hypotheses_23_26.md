@@ -30,6 +30,8 @@
 | 6 | Data analysts: AI drafts commentary for stakeholder reports | 6 | 5 | 9 | **270** | CustDev ★ Market | Start now |
 | 7 | Data analysts: AI creates new dashboards from data model description | 7 | 4 | 9 | **252** | Vision | Start now |
 | 8 | Scriptwriters: AI auto-generates changelog after script fix | 4 | 5 | 8 | **160** | Vision | Start now |
+| 9 | QA: AI generates test cases from user stories | 9 | 7 | 2 | **126** | Market ★ Market | Build access first |
+| 10 | QA: AI summarizes test run results for team leads | 6 | 7 | 3 | **126** | Market | Low-risk QA entry |
 
 **I** = Impact (sprint time if confirmed) · **C** = Confidence (evidence strength) · **A** = Access (path to ICP now) · all 1–10
 
@@ -171,16 +173,45 @@ If #1 (defect diagnosis) pilot is in progress, this can run in parallel as a low
 
 ---
 
+### #9 — QA: Test case generation from user stories ⚠️ Access-gated
+**Score: 126 (would be 630 with access)** | Sources: Market ★ Market
+
+**Hypothesis:**
+> QA engineers will recover ≥20% sprint capacity if AI generates structured test cases (happy path + edge cases) from user stories and acceptance criteria.
+
+**Why it's on the list despite low access:**
+Strongest external evidence of all hypotheses. State Street 67% reduction, DBS 20 man-days → 1 day, confirmed across Citi, HSBC, NatWest, Lloyds, Wells Fargo, DNB. When access opens, this should be first in queue.
+
+**Path to access:**
+Warm intro through DL-1 or DL-0 team leads — they have sprint-level contact with QA on their own teams.
+
+---
+
+### #10 — QA: Test run report summarization ⚠️ Access-gated (low-risk entry)
+**Score: 126** | Sources: Market
+
+**Hypothesis:**
+> QA team leads will save 3–5 hours per release cycle if AI summarizes test execution results (pass/fail/skip) into a risk-highlighted report instead of manual compilation.
+
+**Why it's a better first QA touch than #9:**
+Output is internal (team lead, not stakeholders) → quality bar is lower → easier to pilot without full trust established. Use this as the foot-in-door to build the QA relationship before running #9.
+
+**LLM fit:** Excellent — text summarization and grouping is a strong open-source LLM capability.
+
+---
+
 ## What this run confirmed
 
 1. **Best immediate bet:** #1 (scriptwriter diagnosis) — highest score, confirmed pain, existing access, avoids DL-2 failure mode
 2. **Fastest ROI:** #2 (DL-1 expansion) — nothing to build, one interview to validate
 3. **Strategic play:** #4 (team leads) — low impact per metric but high access leverage; creates champions
+4. **QA is the prize but blocked:** #9 would outscore everything if access were 8+. Priority: build a QA relationship via warm intro from existing team leads.
 
 ## Deduplication notes
 
 - #3, #6, #7 are all from the same DL-1 team — validate in a single interview session, not three separate ones
 - #1, #5, #8 are all scriptwriter team — can be sequenced: start with #1, layer in #5 and #8 after trust is established
+- #9 and #10 are both QA — approach as one relationship-building track, not two separate outreaches
 
 ---
 
@@ -200,6 +231,8 @@ All 10 hypotheses tested through `skill-synthetic-custdev.md` persona simulation
 | #6 | ❌ Dropped | 0.6% sprint. Too small. Bundle into #3 as a feature. |
 | #7 | ❌ Dropped | Pain is in stakeholder iteration, not initial build. Low frequency. |
 | #8 | ❌ Dropped | Real but low impact. Bundle into #1 as background git-hook feature. |
+| #9 | 🔒 Access-gated | Strongest pain found (4-6h per story). 3-layer approval. Track as next tier. |
+| #10 | 🔒 Access-gated | Best QA entry point — self-approval path. Use as QA relationship opener. |
 
 ## Top 3 for Real-World Validation
 

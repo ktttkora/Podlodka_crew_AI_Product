@@ -128,7 +128,7 @@ One full cycle is ~3 hours. The loop is closed when the DL entry lives in `CLAUD
 | `CLAUDE_template.md` | Product context template — fill this in per product and rename to `CLAUDE.md` |
 | `skill-hypothesis-generating.md` | Generates hypothesis candidates from 3 sources (market, CustDev, product data) → prioritized list ready for hypothesis-check |
 | `Hypotheses_WW_YY.md` | Cross-role hypothesis runs — one file per run (e.g. `Hypotheses_23_26.md`, `Hypotheses_23_26_2.md`). Latest: `Hypotheses_23_26_2.md` |
-| `Hypotheses_AllRoles_23_26.md` | **Canonical** combined & skill-corrected hypotheses for data analysts and scenario writers (20 total), in Russian. Replaced the per-role files (`Hypotheses_DataAnalysts/ScenarioWriters_23_26.md`), now deleted. |
+| `Hypotheses_AllRoles_23_26.md` | **Canonical** combined & skill-corrected hypotheses for all 3 roles (30 total), in Russian. Replaced the three per-role files (`Hypotheses_DataAnalysts/ScenarioWriters/QA_23_26.md`), now deleted. |
 | `skill-hypothesis-check.md` | Structures a raw idea into a testable hypothesis + ICE (1–10) + go/pivot/stop criteria |
 | `skill-synthetic-custdev.md` | Turns Claude into a specific ICP persona for a practice interview session |
 | `skill-market-scan.md` | Produces a structured market report: TAM, players, trends, gaps — all with sources |
