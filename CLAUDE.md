@@ -77,14 +77,14 @@ Product builder doing AI transformation inside banks. I find roles with measurab
 |---|---|---|---|---|
 | Data analysts (same team as DL-1) | **Have access** | DL-1 already shipped here | SQL pain solved; remaining pain = dashboards, Excel reports, analysis commentary | **#1** |
 | Chatbot scenario writers | **Have access** | None external — DL-2b internal signal | 20% sprint waste on script fixes confirmed; utterance writing ~5-10% sprint additional | **#2** |
-| Product managers | No access yet | Not yet researched | Unknown — untested | **#3** |
-| Designers | No access yet | Not yet researched | Unknown — untested | **#4** |
+| Product managers | **Have access** | Not yet researched externally — hypotheses + interviews run internally | Pending write-up | **#3** |
+| Designers | **Have access** | Not yet researched externally — hypotheses + interviews run internally | Pending write-up | **#4** |
 
 > **Note:** "Chatbot scriptwriters" and "scenario writers" are the same role — one person writes both JS scripts and NLU training data (intents, utterances, RegExp). DL-3 and DL-4 both target this role.
 
-> **Note:** Product managers and designers were added as candidate roles on 2026-07-10 but have no access, no interviews, and no market scan yet — both rows are placeholders pending trust-building/warm intro and a targeted market scan.
+> **Note:** Product managers and designers gained access as of 2026-07-10 — hypotheses and interviews have been run, but the details aren't yet written up in this file (no dedicated `Hypotheses_*`/`Interview_*` files or DL entry exist yet). Metrics/evidence columns will be filled once that write-up happens.
 
-*Ranking logic: access is the binding constraint at <1 year tenure. Data analysts and scriptwriters have existing relationships and can be interviewed now. Product managers and designers have no access yet — need trust-building before either hypothesis can be tested.*
+*Ranking logic: access is the binding constraint at <1 year tenure. All four roles now have access; rank currently reflects how far each track has progressed (data analysts and scriptwriters have shipped products and active DLs; PM and designer tracks have interviews but no recorded findings yet).*
 
 **Note on Scrum Masters:** Removed — they don't exist as a distinct role in this bank. Team leads double as SMs. The sprint reporting pain (30–120 min/sprint) is real but falls on team leads, not a separate role. Could surface as a secondary pain during team lead interviews.
 
@@ -98,7 +98,7 @@ Product builder doing AI transformation inside banks. I find roles with measurab
 - **Done:** Market signal scan (June 2026)
 - **In progress:** Data analysts (DL-5) — first interview done 09.07.2026, 2–4 more needed
 - **Next:** Continue scriptwriter tracks (DL-3, DL-4) in parallel
-- **Blocked on access:** Product managers, designers — need trust-building/warm intro before a hypothesis cycle can start; no market scan run yet for either
+- **Needs write-up:** Product managers, designers — access gained, hypotheses + interviews already run; need to be documented as `Hypotheses_*`/`Interview_*` files and a DL entry so the findings aren't lost
 
 **Out of scope:** DevOps/SRE/infrastructure roles; Security/Antifraud — separate department, no access.
 
